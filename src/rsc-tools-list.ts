@@ -59,7 +59,7 @@ for (let file of files) {
   if (inFile == EXEC_FAIL) continue;
   assert(typeof inFile !== "string");
   let rsc = safeExec(unpackRsc, error(`Failed: ${file}`), inFile, {
-    validate_checksums: true,
+    validate_checksums: false,
     include_empty: listEmpty,
   });
   if (rsc === EXEC_FAIL) continue;
