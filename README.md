@@ -1,6 +1,13 @@
 # rsc-tools-cli
 Set of CLI utilities to manipulate 
 
+# Installation
+Install from [NPM](https://www.npmjs.com/package/rsc-tools-cli)
+```bash
+npm install -g rsc-tools-cli
+rsc-tools --help
+```
+
 # Usage
 
 ```
