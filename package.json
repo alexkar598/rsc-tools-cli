@@ -1,0 +1,83 @@
+{
+  "name": "rsc-tools-cli",
+  "version": "0.0.0-semantically-released",
+  "author": "alexkar598",
+  "description": "CLI tools for operating on rsc files",
+  "keywords": [
+    "byond",
+    "rsc",
+    "ss13"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkar598/rsc-tools-cli.git"
+  },
+  "homepage": "https://github.com/alexkar598/rsc-tools-cli/",
+  "scripts": {
+    "start": "npx tsx src/rsc-tools.ts",
+    "build": "npx parcel build",
+    "watch": "npx parcel watch --no-hmr",
+    "prepare": "npm run build"
+  },
+  "bin": {
+    "rsc-tools": "dist/rsc-tools.js",
+    "rsc-tools-explorer": "dist/rsc-tools-explorer.js",
+    "rsc-tools-list": "dist/rsc-tools-list.js",
+    "rsc-tools-repack": "dist/rsc-tools-repack.js",
+    "rsc-tools-verify": "dist/rsc-tools-verify.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.2.0",
+    "parcel": "dev",
+    "prettier": "^3.3.3",
+    "semantic-release": "^24.0.0",
+    "semantic-release-npm-deprecate-old-versions": "^1.3.4",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@commander-js/extra-typings": "^12.1.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0",
+    "json-stream-stringify": "^3.1.4",
+    "open": "^10.1.0",
+    "pretty-bytes": "^6.1.1",
+    "rsc-tools": "^2.0.2",
+    "source-map-explorer": "2.5.3"
+  },
+  "license": "MIT",
+  "files": [
+    "dist/**/*.js"
+  ],
+  "source": "src/rsc-tools*.ts",
+  "engines": {
+    "node": ">= 18"
+  },
+  "targets": {
+    "main": false,
+    "module": false,
+    "browser": false,
+    "cli": {
+      "context": "node",
+      "outputFormat": "commonjs",
+      "isLibrary": false,
+      "optimize": true,
+      "includeNodeModules": [
+        "rsc-tools",
+        "pretty-bytes",
+        "open"
+      ],
+      "sourceMap": true,
+      "scopeHoist": true
+    }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "semantic-release-npm-deprecate-old-versions",
+      "@semantic-release/github"
+    ]
+  }
+}
