@@ -1,5 +1,5 @@
 # rsc-tools-cli
-Set of CLI utilities to manipulate 
+Set of CLI utilities to manipulate RSC files
 
 # Installation
 Install from [NPM](https://www.npmjs.com/package/rsc-tools-cli)
