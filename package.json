@@ -49,6 +49,7 @@
   "files": [
     "dist/**/*.js"
   ],
+  "type": "module",
   "source": "src/rsc-tools*.ts",
   "engines": {
     "node": ">= 18"
@@ -59,14 +60,10 @@
     "browser": false,
     "cli": {
       "context": "node",
-      "outputFormat": "commonjs",
+      "outputFormat": "esmodule",
       "isLibrary": false,
       "optimize": true,
-      "includeNodeModules": [
-        "rsc-tools",
-        "pretty-bytes",
-        "open"
-      ],
+      "includeNodeModules": false,
       "sourceMap": true,
       "scopeHoist": true
     }
